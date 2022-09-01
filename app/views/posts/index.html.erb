@@ -8,6 +8,7 @@
   
   <% if user_signed_in? %>
     <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %><br>
+    <%= link_to "Edit reg", edit_user_registration_path %><br>
   <%end%>
 
   <%= link_to "create post", new_post_path %><br>
@@ -20,7 +21,7 @@
     <div><%= post.body %></div>
 
     <% if user_signed_in? %>
-      <div><%= User.find(post.user_id).email %></div>
+      <div><%= User.find(post.user_id).username %></div>
     <%end%>
 
   <% end %>

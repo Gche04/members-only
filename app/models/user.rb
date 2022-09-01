@@ -1,6 +1,5 @@
 class User < ApplicationRecord
-  #validates :username, :email, presence: true
-  #validates :email, uniqueness: true
+  validates :username, presence: true
 
   has_many :posts
   # Include default devise modules. Others available are:
